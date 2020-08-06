@@ -160,7 +160,7 @@ if search_pages > 1:
     if search_pages <= hh_max_page:
         for hh_page in range(1, search_pages):
             print(f"Страница {hh_page+1}")
-            params = {'text': 'дерматолог', 'page': hh_page}
+            params = {'text': vac_search, 'page': hh_page}
             soup = get_soup('https://hh.ru' + '/search/vacancy', params)
             vac_block = soup.find('div', {'class': 'vacancy-serp'})
 
@@ -170,7 +170,7 @@ if search_pages > 1:
     else:
         for hh_page in range (1, hh_max_page):
             print(f"Страница {hh_page+1}")
-            params = {'text': 'дерматолог', 'page': hh_page}
+            params = {'text': vac_search, 'page': hh_page}
             soup = get_soup('https://hh.ru' + '/search/vacancy', params)
             vac_block = soup.find('div', {'class': 'vacancy-serp'})
             #vac_list = vac_block.findChildren(recursive=False)
