@@ -9,7 +9,7 @@ import scrapy
 class JobparserItem(scrapy.Item):
     _id = scrapy.Field()
     item_name = scrapy.Field()
-    item_salary = scrapy.Field()
+    #item_salary = scrapy.Field()
     min_salary = scrapy.Field()
     max_salary = scrapy.Field()
     item_link = scrapy.Field()

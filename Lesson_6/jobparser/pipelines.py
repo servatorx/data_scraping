@@ -18,7 +18,7 @@ class JobparserPipeline:
         #collection = self.mongo_base[spider.name]
         collection = self.mongo_base["vacs"]
         print("*"*50)
-        salary = item['item_salary']
+        salary = item['min_salary']
         if spider.name == 'hhru':
             item['site'] = "HH"
             item['min_salary'], item['max_salary'], item['cur'] = self.hh_process_salary(salary)
@@ -27,8 +27,10 @@ class JobparserPipeline:
             item['min_salary'], item['max_salary'], item['cur'] = self.sj_process_salary(salary)
 
 
+        print(item)
 
         collection.insert_one(item)
+
 
         return item
 

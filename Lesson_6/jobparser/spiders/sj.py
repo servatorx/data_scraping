@@ -20,7 +20,7 @@ class SjruSpider(scrapy.Spider):
         name = response.xpath('//h1/text()').extract_first()
         salary = response.xpath("//span[@class='_3mfro _2Wp8I PlM3e _2JVkc']/text()").extract()
         link = response.url
-        yield JobparserItem(item_name=name,item_salary=salary, item_link=link)
+        yield JobparserItem(item_name=name,min_salary=salary, item_link=link)
         print(name,salary,link)
 
 
